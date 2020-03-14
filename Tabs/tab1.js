@@ -1,8 +1,26 @@
-import React, { Component } from 'react';
-import {Text} from 'react-native'
+import React from 'react';
+import {
+  StyleSheet,
+  View,
+  StatusBar
+} from 'react-native';
+
+import {WebView} from 'react-native-webview';
 
 export default function App() {
-    return (
-        <Text>tab1</Text>
-    )
+  return (
+      <View style={styles.conatiner}>
+        <WebView
+            source={{uri:'http://192.168.0.35:8080/frontend?story=reiver/teststory/beginning'}}    
+        />
+      </View>
+  );
 }
+
+
+const styles = StyleSheet.create({
+  conatiner: {
+    flex: 1,
+    height: 400
+  }
+});

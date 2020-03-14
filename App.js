@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Content, Header, Left, Body, Right, Button, Icon, Title,  Tab, Tabs } from 'native-base';
+import { Container, Content, Header, Left, Body, Right, Button, Icon, Title,  Tab, Tabs, Thumbnail } from 'native-base';
+import { Font } from 'expo';
+import { Ionicons } from '@expo/vector-icons';
+
 import Tab1 from './Tabs/tab1';
 import Tab2 from './Tabs/tab2';
 import Tab3 from './Tabs/tab3';
@@ -22,6 +25,7 @@ export default class HeaderExample extends Component {
               <Title>Spark</Title>
             </Body>
             <Right>
+              <Thumbnail small source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg' }} />
               <Button transparent>
                 <Icon name='menu' />
               </Button>
