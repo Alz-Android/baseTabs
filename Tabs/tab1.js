@@ -11,7 +11,7 @@ export default function App() {
   return (
       <View style={styles.conatiner}>
         <WebView
-            source={{uri:'http://192.168.0.35:8080/frontend?story=reiver/teststory/beginning'}}    
+            source={{uri:'http://192.168.0.14:8080/frontend?story=reiver/teststory/beginning'}}    
         />
       </View>
   );

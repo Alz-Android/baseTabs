@@ -10,7 +10,22 @@ import Tab4 from './Tabs/tab4';
 import Tab5 from './Tabs/tab5';
 
 export default class HeaderExample extends Component {
+
+  state = {
+    loading: true
+  }
+
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      'Roboto': require('native-base/Fonts/Roboto.ttf'),
+      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+    });
+    this.setState({ loading: false })
+  }
+
   render() {
+
+
     return (
       <Container>
         <Content style={{backgroundColor: '#232429'}}>
@@ -35,21 +50,21 @@ export default class HeaderExample extends Component {
           
           <Tabs tabBarUnderlineStyle={{borderBottomWidth:0, backgroundColor: '#E1AD77'}}>
 
-            <Tab heading="Home" tabStyle={{backgroundColor: '#232429'}} textStyle={{color: '#fff',fontWeight: 'bold', fontSize: 12}} activeTabStyle={{backgroundColor: '#232429'}} activeTextStyle={{color: '#E1AD77', fontWeight: 'bold', fontSize: 12}}>
+            <Tab heading="Following" tabStyle={{backgroundColor: '#232429'}} textStyle={{color: '#fff',fontWeight: 'bold', fontSize: 12}} activeTabStyle={{backgroundColor: '#232429'}} activeTextStyle={{color: '#E1AD77', fontWeight: 'bold', fontSize: 12}}>
               <Tab1 />
             </Tab>
-            <Tab heading="Videos" tabStyle={{backgroundColor: '#232429'}} textStyle={{color: '#fff',fontWeight: 'bold', fontSize: 12}} activeTabStyle={{backgroundColor: '#232429'}} activeTextStyle={{color: '#E1AD77', fontWeight: 'bold', fontSize: 12}}>
+            <Tab heading="Discover" tabStyle={{backgroundColor: '#232429'}} textStyle={{color: '#fff',fontWeight: 'bold', fontSize: 12}} activeTabStyle={{backgroundColor: '#232429'}} activeTextStyle={{color: '#E1AD77', fontWeight: 'bold', fontSize: 12}}>
               <Tab2 />
             </Tab>
-            <Tab heading="Playlists" tabStyle={{backgroundColor: '#232429'}} textStyle={{color: '#fff',fontWeight: 'bold', fontSize: 12}} activeTabStyle={{backgroundColor: '#232429'}} activeTextStyle={{color: '#E1AD77', fontWeight: 'bold', fontSize: 12}}>
+            <Tab heading="Browse" tabStyle={{backgroundColor: '#232429'}} textStyle={{color: '#fff',fontWeight: 'bold', fontSize: 12}} activeTabStyle={{backgroundColor: '#232429'}} activeTextStyle={{color: '#E1AD77', fontWeight: 'bold', fontSize: 12}}>
               <Tab3 />
             </Tab>
-            <Tab heading="Community" tabStyle={{backgroundColor: '#232429'}} textStyle={{color: '#fff',fontWeight: 'bold', fontSize: 12}} activeTabStyle={{backgroundColor: '#232429'}} activeTextStyle={{color: '#E1AD77', fontWeight: 'bold', fontSize: 12}}>
+            <Tab heading="Playlists" tabStyle={{backgroundColor: '#232429'}} textStyle={{color: '#fff',fontWeight: 'bold', fontSize: 12}} activeTabStyle={{backgroundColor: '#232429'}} activeTextStyle={{color: '#E1AD77', fontWeight: 'bold', fontSize: 12}}>
               <Tab4 />
             </Tab>
-            <Tab heading="Characters" tabStyle={{backgroundColor: '#232429'}} textStyle={{color: '#fff',fontWeight: 'bold', fontSize: 12}} activeTabStyle={{backgroundColor: '#232429'}} activeTextStyle={{color: '#E1AD77', fontWeight: 'bold', fontSize: 12}}>
+            {/* <Tab heading="Characters" tabStyle={{backgroundColor: '#232429'}} textStyle={{color: '#fff',fontWeight: 'bold', fontSize: 12}} activeTabStyle={{backgroundColor: '#232429'}} activeTextStyle={{color: '#E1AD77', fontWeight: 'bold', fontSize: 12}}>
               <Tab5 />
-            </Tab>
+            </Tab> */}
 
           </Tabs>
 
